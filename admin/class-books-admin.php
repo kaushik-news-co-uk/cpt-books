@@ -73,7 +73,8 @@ class Books_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/books-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'thickbox' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/books-admin.css', [], $this->version, 'all' );
 
 	}
 
@@ -96,7 +97,9 @@ class Books_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/books-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'media-upload' );
+		wp_enqueue_script( 'thickbox' );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/books-admin.js', [ 'jquery' ], $this->version, false );
 
 	}
 
